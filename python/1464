@@ -1,0 +1,18 @@
+class Solution(object):
+    def maxProduct(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        largest = 0
+        sec_largest = 0
+
+        for n in nums:
+
+            if n > largest:
+                sec_largest = largest
+                largest = n
+            elif n > sec_largest:
+                sec_largest = n
+
+        return (largest - 1) * (sec_largest - 1)
